@@ -1,4 +1,5 @@
 ﻿using sem3work6.Employees;
+using sem3work6.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,11 @@ namespace sem3work6
             info += $"Экзамен: {ExaminationTitle} \n";
             info += $"Год получения сертификата: {YearOfSertificate} \n";
             return info;
+        }
+
+        public override void SetBankService(IBankService bankService)
+        {
+            base.SetBankService(bankService);
         }
     }
 }

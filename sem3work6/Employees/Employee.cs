@@ -11,9 +11,9 @@ namespace sem3work6.Employees
     {
         public string Name { get; }
         public double BaseSalary { get; }
-        public IBankService BankService { get; private set; }
+        public virtual IBankService BankService { get; protected set; }
 
-        public Employee(string name, double baseSalary, IBankService? bankService = null)
+        public Employee(string name, double baseSalary, IBankService bankService = null)
         {
             Name = name;
             BaseSalary = baseSalary;

@@ -14,12 +14,16 @@ namespace sem3work6
         {
             List<Employee> employees = new List<Employee> { new Engineer("Иванов Иван Иванович", 20_000),
 
-                        new AcademicDegree(new Manager("Петров Петр Петрович", 30_000, new Gazprombank())) { DissertationTitle = "Коммуникации в проекте", Year = 1998, ScienceArea = "Менеджмент"},
+                        new AcademicDegree(new Manager("Петров Петр Петрович", 30_000, new Sberbank())) { DissertationTitle = "Коммуникации в проекте", Year = 1998, ScienceArea = "Менеджмент"},
 
                         new IntermediateEnglishSertificate(new AcademicDegree(new Scientist("Антон Вячеславович Лапенко", 50_000))
                         { DissertationTitle = "Риторика как феномен культуры", Year = 2022, ScienceArea = "Риторика"})
                         { ExaminationTitle = "С1", YearOfSertificate = 2023}
             };
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee.GetInfo());
+            }
 
             employees[2].SetBankService(new Gazprombank());
 
@@ -27,6 +31,9 @@ namespace sem3work6
             {
                 Console.WriteLine(employee.GetInfo());
             }
+
+            //Employee emp = new AcademicDegree(new Manager("Петров Петр Петрович", 30_000, new Gazprombank())) { DissertationTitle = "Коммуникации в проекте", Year = 1998, ScienceArea = "Менеджмент" };
+            //Console.WriteLine(emp.GetInfo());
             Console.ReadKey();
         }
     }

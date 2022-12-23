@@ -26,5 +26,10 @@ namespace sem3work6
             info += $"Область: {ScienceArea} \n";
             return info;
         }
+
+        public override void SetBankService(IBankService bankService)
+        {
+            base.SetBankService(bankService);
+        }
     }
 }

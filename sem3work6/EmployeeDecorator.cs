@@ -1,4 +1,5 @@
 ﻿using sem3work6.Employees;
+using sem3work6.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace sem3work6
         public EmployeeDecorator(Employee employee) : base(employee.Name, employee.BaseSalary, employee.BankService)
         {
             Employee = employee;
+        }
+
+        public override void SetBankService(IBankService bankService)
+        {
+            Employee.SetBankService(bankService);
+            base.SetBankService(bankService);
         }
     }
 }
